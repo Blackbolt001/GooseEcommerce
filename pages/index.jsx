@@ -5,6 +5,7 @@ import {mongooseConnect} from "@/lib/mongoose";
 import NewProducts from "@/components/NewProducts";
 
 export default function HomePage({featuredProduct,newProducts}){
+  console.log(newProducts);
   return(
     <div>
       <Header/>
@@ -15,7 +16,7 @@ export default function HomePage({featuredProduct,newProducts}){
 }
 
 export async function getServerSideProps(){
- const featuredProductId = '654cf3de765005422f548d4d';
+ const featuredProductId = '65551729bff818314843d820';
  await mongooseConnect();
  const featuredProduct = await Product.findById(featuredProductId);
  const newProducts = await Product.find({}, null, {sort: {'_id':-1}, limit:10});
