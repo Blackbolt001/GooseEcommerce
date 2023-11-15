@@ -3,23 +3,74 @@ import Button from "@/components/Button";
 import Link from "next/link";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
-//import CartIcon from "./icons/CartIcon";
+import CartIcon from "./icons/CartIcon";
+import SearchIcon from "./icons/SearchIcon";
+import ThumbsUpIcon from "./icons/ThumbsUpIcon";
 const ProductWrapper = styled.div`
+background-color:rgba(199, 199, 199, 0.47);
+border-radius:10px;
+`;
+const Info = styled.div`
+opacity: 0;
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+left: 0;
+border-radius:15px;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 3;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 1.5s ease;
+cursor: pointer;
 `;
 
 const WhiteBox = styled(Link)`
 background-color:#fff;
-padding:20px;
-height:120px;
-text-align:center;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:10px;
+flex: 1;
+  margin: 5px;
+  border-radius:20px;
+  min-width: 240px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  position: relative;
+  &:hover ${Info}{
+    opacity: 1;
+  }
+`;
+const Circle = styled.div`
+ width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #000;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  position: absolute;
 `;
 const Image = styled.img`
-    max-width:100%;
-    max-height:80px;
+    height:75%;
+    z-index:2;
+`;
+const Icon = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color:black;
+  background-color: #afb1ba;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  transition: all 1.0s ease;
+  &:hover{
+    background-color:#000;
+    color:white;
+    transform: scale(1.5);
+  }
 `;
 const Title= styled(Link)`
 font-weight:normal;
@@ -59,9 +110,19 @@ export default function ProductBox({_id,title,description,price,images}) {
     return (
         <ProductWrapper>
         <WhiteBox href={url}>
-            <div>
+            <Circle/>
             <Image src={images?.[0]} alt=""/>
-            </div>
+            <Info>
+            <Icon>
+                <CartIcon/>
+            </Icon>
+            <Icon>
+                <SearchIcon/>
+            </Icon>
+            <Icon>
+                <ThumbsUpIcon/>
+            </Icon>
+            </Info>
         </WhiteBox>
         <ProductInfoBox>
         <Title href={url}>{title}</Title>
