@@ -20,11 +20,7 @@ export default function NewProducts({products}) {
   return (
     <Center>
       <Title>New Arrivals</Title>
-      <ProductsGrid>
-        {products?.length > 0 && products.map(product => (
-        <ProductBox {...product}/>
-        ))}
-      </ProductsGrid>
+      <ProductsGrid products ={products}/>
     </Center>
   );
 }
