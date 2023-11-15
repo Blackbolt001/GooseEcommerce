@@ -7,6 +7,8 @@ import styled from "styled-components";
 import axios from "axios";
 import Table from "@/components/Table";
 import Input from "@/components/Input";
+import PlusIcon from "@/components/icons/PlusIcon";
+import MinusIcon from "@/components/icons/MinusIcon";
 
 const ColumnsWrapper = styled.div`
    display: grid;
@@ -25,6 +27,14 @@ const Box = styled.div`
 `;
 const ProductInfoCell = styled.td`
   padding: 10px 0;
+  background-color:black;
+  border-radius:20px;
+`;
+const Circle = styled.circle`
+border-radius:10px;
+width:200px;
+height:200px;
+background-color:black;
 `;
 const ProductImageBox = styled.div`
   width: 70px;
@@ -38,6 +48,7 @@ const ProductImageBox = styled.div`
   img{
     max-width: 60px;
     max-height: 60px;
+    height:20px;
   }
   @media screen and (min-width: 768px) {
     padding: 10px;
@@ -52,9 +63,13 @@ const ProductImageBox = styled.div`
 const QuantityLabel = styled.span`
   padding: 0 15px;
   display:block;
+  font-size:1.0rem;
+  align-items:center;
+  text-align:center;
 `;
 const Image = styled.img`
   max-width:100%;
+
 `;
 const CityHolder = styled.div`
   display:flex;
@@ -118,20 +133,24 @@ for (const productId of cartProducts) {
                  {product.title} 
                  </ProductInfoCell>
                  <td>
-                  <Button onClick={() => lessOfThisProduct(product._id)}>-</Button>
+                  <Button onClick={() => lessOfThisProduct(product._id)}>
+                    <MinusIcon/>
+                  </Button>
                   <QuantityLabel>
                   {cartProducts.filter(id => id === product._id).length}
                   </QuantityLabel>   
-                  <Button onClick={() => moreOfThisProduct(product._id)}>+</Button>   
+                  <Button onClick={() => moreOfThisProduct(product._id)}>
+                    <PlusIcon/>
+                    </Button>   
                  </td> 
                  <td>
-                  ${cartProducts.filter(id => id === product._id).length * product.price}</td>
+                  <th>${cartProducts.filter(id => id === product._id).length * product.price}</th></td>
                 </tr>
               ))}
               <tr>
                 <td><h1>Total</h1></td>
                 <td></td>
-                <td>{total}</td>
+                <td><th>{total}</th></td>
               </tr>
               </tbody>
             </Table>
