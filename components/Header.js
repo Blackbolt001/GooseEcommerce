@@ -10,6 +10,8 @@ const StyledHeader = styled.header`
 const Logo = styled(Link)`
     color: #fff;
     text-decoration:none;
+    position:relative;
+    z-index: 3;
 `;
 const Wrapper = styled.div`
     display:flex;
@@ -19,12 +21,17 @@ const Wrapper = styled.div`
 const StyledNav = styled.nav`
     display:flex;
     gap:10px;
-`
+
+`;
+
 const NavLink = styled(Link)`
     display:block;
     color:#aaa;
     text-decoration:none;
     padding: 10px 0;
+    @media screen and (min-width: 768px) {
+    padding:0;
+  }
 `;
 
 export default function Header() {

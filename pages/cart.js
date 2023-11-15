@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import Table from "@/components/Table";
 
 const ColumnsWrapper = styled.div`
    display: grid;
@@ -20,6 +21,35 @@ const Box = styled.div`
     background-color:#fff;
     border-radius:10px;
     padding:30px;
+`;
+const ProductInfoCell = styled.td`
+  padding: 10px 0;
+`;
+const ProductImageBox = styled.div`
+  width: 70px;
+  height: 100px;
+  padding: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  img{
+    max-width: 60px;
+    max-height: 60px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    img{
+      max-width: 80px;
+      max-height: 80px;
+    }
+  }
+`;
+const Image = styled.img`
+  max-width:100%;
 `;
 
 export default function CartPage() {
@@ -41,19 +71,33 @@ export default function CartPage() {
         <Center>
         <ColumnsWrapper>
         <Box>
-          
+        <h2>Cart</h2>
             {!cartProducts?.length && (
                 <div>Your cart is empty</div>
             )}
-            {products?.length > 0 && (
-              <>
-              <h2>Cart</h2>
+                {products?.length > 0 && (
+            <Table>
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
               {products.map(product => (
-                
-                <div key={product._id}>{product.title}</div>
+                <tr key={product._id}>
+                  <ProductInfoCell>
+                  <Image src ={product.images[0]} alt=""/>
+                 {product.title} 
+                 </ProductInfoCell>
+                 <td>{cartProducts.filter(id => id === product._id).length}</td> 
+                 <td>Price</td>
+                </tr>
               ))}
-              </>  
-            )}
+              </tbody>
+            </Table>
+         )}
         </Box>
         {!!cartProducts?.length && (
         <Box>
