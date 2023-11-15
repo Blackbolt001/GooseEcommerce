@@ -48,12 +48,16 @@ const ProductImageBox = styled.div`
     }
   }
 `;
+const QuantityLabel = styled.span`
+  padding: 0 15px;
+  display:block;
+`;
 const Image = styled.img`
   max-width:100%;
 `;
 
 export default function CartPage() {
-    const {cartProducts} = useContext(CartContext);
+    const {cartProducts,addProduct,removeProduct} = useContext(CartContext);
     const [products,setProducts] = useState([]);
 
     useEffect(() => {
@@ -65,6 +69,12 @@ export default function CartPage() {
         }
       }, [cartProducts]);
 
+      function moreOfThisProduct(id) {
+        addProduct(id);
+      }
+function lessOfThisProduct(id) {
+    removeProduct(id);
+}
     return (
         <>
         <Header/>
@@ -91,8 +101,15 @@ export default function CartPage() {
                   <Image src ={product.images[0]} alt=""/>
                  {product.title} 
                  </ProductInfoCell>
-                 <td>{cartProducts.filter(id => id === product._id).length}</td> 
-                 <td>Price</td>
+                 <td>
+                  <Button onClick={() => lessOfThisProduct(product._id)}>-</Button>
+                  <QuantityLabel>
+                  {cartProducts.filter(id => id === product._id).length}
+                  </QuantityLabel>   
+                  <Button onClick={() => moreOfThisProduct(product._id)}>+</Button>   
+                 </td> 
+                 <td>
+                  ${cartProducts.filter(id => id === product._id).length * product.price}</td>
                 </tr>
               ))}
               </tbody>
