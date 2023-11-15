@@ -19,8 +19,10 @@ const Wrapper = styled.div`
     padding: 20px 0;
 `;
 const StyledNav = styled.nav`
-    display:flex;
-    gap:10px;
+    display: block;
+    gap:15px;
+  background-color: #222;
+    
 
 `;
 
