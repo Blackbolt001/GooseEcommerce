@@ -3,12 +3,18 @@ import Button from "@/components/Button";
 import Link from "next/link";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
-import CartIcon from "./icons/CartIcon";
-import SearchIcon from "./icons/SearchIcon";
-import ThumbsUpIcon from "./icons/ThumbsUpIcon";
+import CartIcon from "../components/icons/CartIcon";
+import SearchIcon from "../components/icons/SearchIcon";
+import ThumbsUpIcon from "../components/icons/ThumbsUpIcon";
+
 const ProductWrapper = styled.div`
 background-color:rgba(199, 199, 199, 0.47);
 border-radius:10px;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+
 `;
 const Info = styled.div`
 opacity: 0;
@@ -32,8 +38,8 @@ background-color:#fff;
 flex: 1;
   margin: 5px;
   border-radius:20px;
-  max-width: 150px;
-  height: 150px;
+  max-width: 250px;
+  height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,8 +50,8 @@ flex: 1;
   }
 `;
 const Circle = styled.div`
- width: 115px;
-  height: 115px;
+ width: 200px;
+  height: 200px;
   border-radius: 50%;
   background-color: #000;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;

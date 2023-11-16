@@ -38,6 +38,9 @@ const NavLink = styled(Link)`
     padding:0;
   }
 `;
+const Button = styled.button`
+
+`;
 
 export default function Header() {
     const {cartProducts} = useContext(CartContext);
@@ -46,7 +49,6 @@ export default function Header() {
         <StyledHeader>
             <Center>
                 <Wrapper>
-            <Logo href={'/'}>Goose.</Logo>
             <StyledNav>
                 <NavLink href={'/'}>Home</NavLink>
                 <NavLink href={'/products'}>All Products</NavLink>

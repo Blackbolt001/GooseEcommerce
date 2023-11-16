@@ -59,6 +59,8 @@ export default function Featured({product}){
             <Center>
                 <ColumnsWrapper>
                     <Column> 
+                    <Image src = "https://georgiagoose-next-ecommerce.s3.amazonaws.com/1700075277877.png" alt="deadpool"/>
+
                     <div>
             <Title>{product.title}</Title>
             <Desc> {product.description}</Desc>
@@ -71,7 +73,6 @@ export default function Featured({product}){
             </ButtonsWrapper>
             </div>
             </Column>
-            <Image src = "https://georgiagoose-next-ecommerce.s3.amazonaws.com/1700075277877.png" alt="deadpool"/>
             </ColumnsWrapper>
             </Center>
         </Bg>
