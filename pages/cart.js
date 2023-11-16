@@ -28,9 +28,13 @@ const Box = styled.div`
 const ProductInfoCell = styled.td`
   padding: 10px 0;
   background-color:black;
-  border-radius:15px;
+  height:80px;
+  max-width:80%;
   display:flex;
   align-items:center;
+  justify-content:center;
+  text-align:center;
+  border-radius:15px;
   color:white;
 `;
 
@@ -57,8 +61,11 @@ const QuantityLabel = styled.span`
  
 `;
 const Image = styled.img`
- height:80%;
+ height:50%;
  z-index:2;
+ @media screen and (min-width: 768px) {
+    height: 100%;
+  }
 `;
 const CityHolder = styled.div`
   display:flex;
