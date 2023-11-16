@@ -75,7 +75,7 @@ const CityHolder = styled.div`
 export default function CartPage() {
     const {cartProducts,addProduct,removeProduct} = useContext(CartContext);
     const [products,setProducts] = useState([]);
-    const [name,setNames] = useState('');
+    const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const [city,setCity] = useState('');
     const [postalCode,setPostalCode] = useState('');
@@ -98,6 +98,14 @@ export default function CartPage() {
       }
 function lessOfThisProduct(id) {
     removeProduct(id);
+}
+async function goToPayment(){
+  const response = await axios.post('/api/checkout', {
+    name,email,city,postalCode,streetAddress,country,cartProducts,
+  });
+  if(response.data.url) {
+    window.location = response.data.url;
+  }
 }
 let total = 0;
 for (const productId of cartProducts) {
@@ -191,7 +199,8 @@ for (const productId of cartProducts) {
                      value={country}
                      name="country"
                      onChange={ev => setCountry(ev.target.value)}/>
-        <Button black={'true'} size={'l'} block={'true'} type="submit">Continue to Payment</Button>
+                     <input type="hidden" name="products" value={cartProducts.join(',')}/>
+        <Button black={'true'} size={'l'} block={'true'}  onClick={goToPayment}>Continue to Payment</Button>
         </Box>
         )}
       

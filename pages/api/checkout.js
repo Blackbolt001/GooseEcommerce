@@ -33,12 +33,10 @@ export default async function handler(req,res) {
       });
     }
   }
-
   const orderDoc = await Order.create({
     line_items,name,email,city,postalCode,
     streetAddress,country,paid:false,
   });
-
   const session = await stripe.checkout.sessions.create({
     line_items,
     mode: 'payment',
@@ -51,5 +49,4 @@ export default async function handler(req,res) {
   res.json({
     url:session.url,
   })
-
 }
