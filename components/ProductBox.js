@@ -10,6 +10,8 @@ import ThumbsUpIcon from "../components/icons/ThumbsUpIcon";
 const ProductWrapper = styled.div`
 background-color:rgba(199, 199, 199, 0.47);
 border-radius:10px;
+text-align:center;
+
 
 `;
 const Info = styled.div`
@@ -36,6 +38,7 @@ flex: 1;
   border-radius:20px;
   height: 320px;
   width:280px;
+  padding-left:40px;
   display: flex;
   align-items: center;
   justify-content: center;

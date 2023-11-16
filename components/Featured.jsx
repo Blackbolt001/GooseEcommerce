@@ -10,11 +10,13 @@ import { CartContext } from "./CartContext";
 const Bg = styled.div`
 background-color: #222;
 width:100vw;
+height:50vh;
 color:#fff;
 padding:50px 0;
 `;
 const Title = styled.h1`
     margin:0;
+    text-align:center;
     font-weight:500;
     color:lightyellow;
     font-size:1.5rem;
@@ -27,6 +29,8 @@ const Desc = styled.p`
     color:#aaa;
     font-size:.8rem;
     font-family: 'Cinzel', serif;
+    display:flex;
+ 
 `;
 const ColumnsWrapper = styled.div`
     display:flex-grid;
@@ -37,16 +41,19 @@ const ColumnsWrapper = styled.div`
 const Column = styled.div`
     display:flex;
     align-items:center;
+    justify-content:center;
     flex-direction:column;
 `;
 const ButtonsWrapper = styled.div`
     display:flex;
     gap:10px;
     margin-top:25px;
+    justify-content:space-evenly;
 
 `;
 const Image = styled.img`
-    max-width:100%;
+    height:300px;
+    width:200px;
 `;
 
 

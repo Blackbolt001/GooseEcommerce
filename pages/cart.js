@@ -28,48 +28,37 @@ const Box = styled.div`
 const ProductInfoCell = styled.td`
   padding: 10px 0;
   background-color:black;
-  border-radius:20px;
-`;
-const Circle = styled.circle`
-border-radius:10px;
-width:200px;
-height:200px;
-background-color:black;
-`;
-const ProductImageBox = styled.div`
-  width: 70px;
-  height: 100px;
-  padding: 2px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius:15px;
   display:flex;
+  align-items:center;
+  color:white;
+`;
+
+const ProductImageBox = styled.div`
+  width: 100px;
+  height: 120px;
+  padding: 2px;
+  display:flex;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  img{
-    max-width: 60px;
-    max-height: 60px;
-    height:20px;
-  }
+ 
   @media screen and (min-width: 768px) {
     padding: 10px;
-    width: 100px;
-    height: 100px;
-    img{
-      max-width: 80px;
-      max-height: 80px;
-    }
+    width: 80px;
+    height: 80px;
+    
   }
 `;
 const QuantityLabel = styled.span`
   padding: 0 15px;
-  display:block;
   font-size:1.0rem;
-  align-items:center;
-  text-align:center;
+ 
 `;
 const Image = styled.img`
-  max-width:100%;
-
+ height:80%;
+ z-index:2;
 `;
 const CityHolder = styled.div`
   display:flex;
@@ -92,6 +81,8 @@ export default function CartPage() {
             .then(response => {
               setProducts(response.data);
             })
+        } else {
+          setProducts([]);
         }
       }, [cartProducts]);
 
@@ -129,28 +120,30 @@ for (const productId of cartProducts) {
               {products.map(product => (
                 <tr key={product._id}>
                   <ProductInfoCell>
+                    <ProductImageBox>
                   <Image src ={product.images[0]} alt=""/>
+                  </ProductImageBox>
                  {product.title} 
                  </ProductInfoCell>
                  <td>
-                  <Button onClick={() => lessOfThisProduct(product._id)}>
-                    <MinusIcon/>
-                  </Button>
+                 <Button onClick={() => moreOfThisProduct(product._id)}>
+                    <PlusIcon/>
+                    </Button>   
                   <QuantityLabel>
                   {cartProducts.filter(id => id === product._id).length}
                   </QuantityLabel>   
-                  <Button onClick={() => moreOfThisProduct(product._id)}>
-                    <PlusIcon/>
-                    </Button>   
+                  <Button onClick={() => lessOfThisProduct(product._id)}>
+                    <MinusIcon/>
+                  </Button> 
                  </td> 
                  <td>
-                  <th>${cartProducts.filter(id => id === product._id).length * product.price}</th></td>
+                  <h2>${cartProducts.filter(id => id === product._id).length * product.price}</h2></td>
                 </tr>
               ))}
               <tr>
                 <td><h1>Total</h1></td>
                 <td></td>
-                <td><th>{total}</th></td>
+                <td><h2>{total}</h2></td>
               </tr>
               </tbody>
             </Table>
