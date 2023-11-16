@@ -224,7 +224,6 @@ if (isSuccess) {
                      value={country}
                      name="country"
                      onChange={ev => setCountry(ev.target.value)}/>
-                     <input type="hidden" name="products" value={cartProducts.join(',')}/>
         <Button black={'true'} size={'l'} block={'true'}  onClick={goToPayment}>Continue to Payment</Button>
         </Box>
         )}
