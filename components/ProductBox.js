@@ -10,10 +10,6 @@ import ThumbsUpIcon from "../components/icons/ThumbsUpIcon";
 const ProductWrapper = styled.div`
 background-color:rgba(199, 199, 199, 0.47);
 border-radius:10px;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
 
 `;
 const Info = styled.div`
@@ -38,27 +34,36 @@ background-color:#fff;
 flex: 1;
   margin: 5px;
   border-radius:20px;
-  max-width: 250px;
   height: 320px;
+  width:280px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   position: relative;
+  @media screen and (min-width: 768px) {
+    height: 280px;
+  max-width:350px;
+  }
   &:hover ${Info}{
     opacity: 1;
   }
+
 `;
 const Circle = styled.div`
- width: 200px;
-  height: 200px;
+ width: 180px;
+  height: 180px;
   border-radius: 50%;
   background-color: #000;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   position: absolute;
+  @media screen and (min-width: 768px) {
+    height: 200px;
+  max-width:200px;
+  }
 `;
 const Image = styled.img`
-    height:75%;
+   height:75%;
     z-index:2;
 `;
 const Icon = styled.div`

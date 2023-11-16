@@ -9,6 +9,7 @@ import { CartContext } from "./CartContext";
 
 const Bg = styled.div`
 background-color: #222;
+width:100vw;
 color:#fff;
 padding:50px 0;
 `;
