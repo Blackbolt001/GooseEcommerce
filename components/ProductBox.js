@@ -32,8 +32,8 @@ background-color:#fff;
 flex: 1;
   margin: 5px;
   border-radius:20px;
-  min-width: 240px;
-  height: 280px;
+  max-width: 150px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,8 +44,8 @@ flex: 1;
   }
 `;
 const Circle = styled.div`
- width: 200px;
-  height: 200px;
+ width: 115px;
+  height: 115px;
   border-radius: 50%;
   background-color: #000;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
