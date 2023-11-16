@@ -6,7 +6,6 @@ import NewProducts from "@/components/NewProducts";
 import styled from "styled-components";
 
 const Container = styled.div`
-  width:100%;
   overflow-x:hidden;
 `;
 

@@ -33,13 +33,11 @@ cursor: pointer;
 
 const WhiteBox = styled(Link)`
 background-color:#fff;
-flex: 1;
-  margin: 5px;
+  padding:20px;
   border-radius:20px;
-  height: 320px;
-  width:280px;
-  padding-left:40px;
+  height: 160px;
   display: flex;
+  text-align:center;
   align-items: center;
   justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
@@ -54,19 +52,21 @@ flex: 1;
 
 `;
 const Circle = styled.div`
- width: 180px;
-  height: 180px;
+ width: 160px;
+  height: 160px;
   border-radius: 50%;
   background-color: #000;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   position: absolute;
   @media screen and (min-width: 768px) {
-    height: 200px;
+    height: 160px;
   max-width:200px;
   }
 `;
 const Image = styled.img`
-   height:75%;
+   max-height:160px;
+   max-width:100%;
+   
     z-index:2;
 `;
 const Icon = styled.div`

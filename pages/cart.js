@@ -143,7 +143,7 @@ for (const productId of cartProducts) {
               <tr>
                 <td><h1>Total</h1></td>
                 <td></td>
-                <td><h2>{total}</h2></td>
+                <td><h2>${total}</h2></td>
               </tr>
               </tbody>
             </Table>
@@ -151,6 +151,7 @@ for (const productId of cartProducts) {
         </Box>
         {!!cartProducts?.length && (
         <Box>
+          <h2>Order Information</h2>
         <Input type="text"
          placeholder="Name"
          value={name}
@@ -183,7 +184,7 @@ for (const productId of cartProducts) {
                      value={country}
                      name="country"
                      onChange={ev => setCountry(ev.target.value)}/>
-        <Button black={'true'} size={'l'} block={'true'}>Continue to Payment</Button>
+        <Button black={'true'} size={'l'} block={'true'} type="submit">Continue to Payment</Button>
         </Box>
         )}
       
