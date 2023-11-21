@@ -19,6 +19,7 @@ export default async function handler(req,res) {
   
     // Handle the event
     switch (event.type) {
+        case 'payment_intent_succeeded':
       case 'checkout.session.completed':
         const data = event.data.object;
         const orderId = data.metadata.orderId;

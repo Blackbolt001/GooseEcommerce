@@ -226,11 +226,6 @@ if (isSuccess) {
                      value={country}
                      name="country"
                      onChange={ev => setCountry(ev.target.value)}/>
-              <Input type="text"
-                     placeholder="Discount"
-                     value={discount}
-                     name="discount"
-                     onChange={ev => setDiscount(ev.target.value)}/>
                      
         <Button black={1} size={'l'} block={1}  onClick={goToPayment}>Continue to Payment</Button>
         </Box>
