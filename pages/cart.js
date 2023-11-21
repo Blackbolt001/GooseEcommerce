@@ -81,6 +81,7 @@ export default function CartPage() {
     const [postalCode,setPostalCode] = useState('');
     const [streetAddress,setStreetAddress] = useState('');
     const [country,setCountry] = useState('');
+    const [discount,setDiscount] = useState('');
     const [isSuccess, setIsSuccess]= useState(false);
 
     useEffect(() => {
@@ -101,7 +102,8 @@ export default function CartPage() {
           setIsSuccess(true);
           clearCart();
         }
-      },[]);
+      },
+      [clearCart]);
 
       function moreOfThisProduct(id) {
         addProduct(id);
@@ -111,7 +113,7 @@ function lessOfThisProduct(id) {
 }
 async function goToPayment(){
   const response = await axios.post('/api/checkout', {
-    name,email,city,postalCode,streetAddress,country,cartProducts,
+    name,email,city,postalCode,streetAddress,country,cartProducts,discount
   });
   if(response.data.url) {
     window.location = response.data.url;
@@ -224,7 +226,13 @@ if (isSuccess) {
                      value={country}
                      name="country"
                      onChange={ev => setCountry(ev.target.value)}/>
-        <Button black={'true'} size={'l'} block={'true'}  onClick={goToPayment}>Continue to Payment</Button>
+              <Input type="text"
+                     placeholder="Discount"
+                     value={discount}
+                     name="discount"
+                     onChange={ev => setDiscount(ev.target.value)}/>
+                     
+        <Button black={1} size={'l'} block={1}  onClick={goToPayment}>Continue to Payment</Button>
         </Box>
         )}
       

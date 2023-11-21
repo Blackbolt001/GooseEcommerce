@@ -10,7 +10,7 @@ export default async function handler(req,res) {
   }
   const {
     name,email,city,
-    postalCode,streetAddress,country,
+    postalCode,streetAddress,country,coupon,
     cartProducts,
   } = req.body;
   await mongooseConnect();
@@ -35,8 +35,9 @@ export default async function handler(req,res) {
   }
   const orderDoc = await Order.create({
     line_items,name,email,city,postalCode,
-    streetAddress,country,paid:false,
+    streetAddress,country,coupon,paid:false,
   });
+
   const session = await stripe.checkout.sessions.create({
     line_items,
     mode: 'payment',

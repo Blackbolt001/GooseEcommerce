@@ -8,6 +8,7 @@ const OrderSchema = new Schema({
   postalCode:String,
   streetAddress:String,
   country:String,
+  coupon:String,
   paid:Boolean,
 }, {
   timestamps: true,

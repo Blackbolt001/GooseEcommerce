@@ -43,8 +43,8 @@ background-color:#fff;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   position: relative;
   @media screen and (min-width: 768px) {
-    height: 280px;
-  max-width:350px;
+    height: 210px;
+  max-width:100%;;
   }
   &:hover ${Info}{
     opacity: 1;
