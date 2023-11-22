@@ -33,17 +33,28 @@ const Desc = styled.p`
  
 `;
 const ColumnsWrapper = styled.div`
-    display:flex-grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap:40px;
-   
+    overflow: hidden;
+    display:flex;
+    height:480px;
+    width:100%;
+    position:relative;
+    transition: all ease-in-out 1.0s;
+      &:hover{
+      border-radius: 0%;
+      }
 `;
 const Column = styled.div`
     display:flex;
-    align-items:center;
     justify-content:center;
-    flex-direction:column;
+    position:absolute;
+   
+
 `;
+const Logo = styled.div`
+    color: #e02b9b6c;
+    font-size:xx-large;
+    
+`
 const ButtonsWrapper = styled.div`
     display:flex;
     gap:10px;
@@ -52,9 +63,12 @@ const ButtonsWrapper = styled.div`
 
 `;
 const Image = styled.img`
-    height:300px;
-    width:200px;
+    height:180px;
+    width:180px;
+    z-index:5;
+
 `;
+
 
 
 export default function Featured({product}){
@@ -65,11 +79,21 @@ export default function Featured({product}){
     return(
         <Bg>
             <Center>
-                <ColumnsWrapper>
-                    <Column> 
-                    <Image src = "https://georgiagoose-next-ecommerce.s3.amazonaws.com/1700075277877.png" alt="deadpool"/>
-
-                    <div>
+                <ColumnsWrapper> 
+                <Column>
+                <iframe width="680" height="380" src="https://www.youtube.com/embed/MH25QHJ6auY?autoplay=1&mute=1"
+                 title="Covington Square &amp; Historic Courthouse  DJI Phantom"
+                  frameborder="0" 
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+                </iframe>
+                </Column>
+                <Column>
+                <Image src = "https://georgiagoose-next-ecommerce.s3.amazonaws.com/1700614526161.png" alt="goose">
+                </Image>
+                <Logo>Georgia Goose</Logo>
+                </Column>
+                <div>
             <Title>{product.title}</Title>
             <Desc> {product.description}</Desc>
             <ButtonsWrapper>
@@ -80,7 +104,6 @@ export default function Featured({product}){
             </Button>
             </ButtonsWrapper>
             </div>
-            </Column>
             </ColumnsWrapper>
             </Center>
         </Bg>
