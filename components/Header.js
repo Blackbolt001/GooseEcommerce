@@ -36,9 +36,10 @@ const NavLink = styled(Link)`
     font-size:14px;
     font-family: 'Cinzel', serif;
     text-decoration:none;
-    padding: 10px 0;
+    margin-right:5px;
+    padding:10px 0;
     @media screen and (min-width: 768px) {
-    padding:0;
+    padding:0px;
     font-size:1.5rem ;
   }
   transition: all ease-in-out 0.3s;
