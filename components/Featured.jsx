@@ -39,7 +39,7 @@ const Desc = styled.p`
 const ColumnsWrapper = styled.div`
     overflow: hidden;
     display:flex;
-    height:800px;
+    height:400px;
     width:400px;
     border-radius:20%;
     overflow:hidden;
@@ -48,9 +48,9 @@ const ColumnsWrapper = styled.div`
     position:relative;
     transition: all ease-in-out 2.0s;
       &:hover{
-      border-radius: 50%;
-      height:400px;
-      width:400px;
+      border-radius:50%;
+      height:260px;
+      width:260px;
       }
       @media screen and (min-width: 768px) {
     height:660px;
@@ -117,8 +117,8 @@ const Image2 = styled.img`
     position:absolute;
     bottom:230px;
     @media screen and (min-width: 768px) {
-    height:60%;
-    width:40%;
+    height:600px;
+    width:800px;
   }
 `;
 
