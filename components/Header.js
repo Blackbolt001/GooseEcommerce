@@ -40,7 +40,7 @@ const NavLink = styled(Link)`
     padding: 10px 0;
     @media screen and (min-width: 768px) {
     padding:0;
-    font-size:2rem ;
+    font-size:1rem ;
   }
   transition: all ease-in-out 0.3s;
       &:hover{
