@@ -19,14 +19,16 @@ const Logo = styled(Link)`
 `;
 const Wrapper = styled.div`
     display:flex; 
-    flex-wrap:wrap;
-    justify-content:space-between;
-    padding: 20px 0;
+    padding: 10px 0;
 `;
 const StyledNav = styled.nav`
     display: flex;
-    gap:15px;
+    gap:5px;
   background-color:transparent;
+  @media screen and (min-width: 768px) {
+   gap:15px;
+    font-size:1.5rem ;
+  }
     
 
 `;
