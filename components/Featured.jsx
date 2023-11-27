@@ -8,8 +8,9 @@ import { CartContext } from "./CartContext";
 
 
 const Bg = styled.div`
-background-color: #8ad8e9ae;
+background-color: #a3d8dfac;
 width:100vw;
+display:flex;
 height:50vh;
 color:#fff;
 padding:50px 0;
@@ -36,7 +37,7 @@ const ColumnsWrapper = styled.div`
     overflow: hidden;
     display:flex;
     height:300px;
-    width:100%;
+    width:300px;
     margin:5px;
     justify-content:center;
     align-items:center;
@@ -44,8 +45,9 @@ const ColumnsWrapper = styled.div`
     position:relative;
     transition: all ease-in-out 1.0s;
       &:hover{
-      border-radius: 20%;
-      height:400px;
+      border-radius: 50%;
+      height:300px;
+      width:300px;
       }
 `;
 const Column = styled.div`
@@ -62,7 +64,6 @@ const Logo = styled.div`
     display:flex;
     padding:0px 20px;
     text-align:center;
-    justify-content:center;
     align-items:center;
     border-radius:10%;
     background-color: #123566;
@@ -97,6 +98,7 @@ export default function Featured({product}){
     return(
         <Bg>
             <Center>
+             
                 <ColumnsWrapper> 
                 <Column>
                 <iframe width="680" height="635" src="https://www.youtube.com/embed/Pv46HBM8x8c?autoplay=1&mute=1" 
