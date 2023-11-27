@@ -34,13 +34,13 @@ const StyledNav = styled.nav`
 const NavLink = styled(Link)`
     display:block;
     color: white;
-    font-size:1rem;
+    font-size:.8re;
     font-family: 'Cinzel', serif;
     text-decoration:none;
     padding: 10px 0;
     @media screen and (min-width: 768px) {
     padding:0;
-    font-size:1rem ;
+    font-size:1.5rem ;
   }
   transition: all ease-in-out 0.3s;
       &:hover{
