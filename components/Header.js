@@ -7,7 +7,9 @@ import { CartContext } from "./CartContext";
 
 
 const StyledHeader = styled.header`
-    background-color: #222;
+    background-color: #123566;
+    display:flex;
+    border-radius:5px;
 `;
 const Logo = styled(Link)`
     color: #fff;
@@ -24,19 +26,26 @@ const Wrapper = styled.div`
 const StyledNav = styled.nav`
     display: flex;
     gap:15px;
-  background-color: #222;
+  background-color:transparent;
     
 
 `;
 
 const NavLink = styled(Link)`
     display:block;
-    color:#aaa;
+    color: white;
+    font-size:1rem;
+    font-family: 'Cinzel', serif;
     text-decoration:none;
     padding: 10px 0;
     @media screen and (min-width: 768px) {
     padding:0;
+    font-size:2rem ;
   }
+  transition: all ease-in-out 0.3s;
+      &:hover{
+        color:blue;
+      }
 `;
 const Button = styled.button`
 

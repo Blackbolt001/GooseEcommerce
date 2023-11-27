@@ -8,7 +8,7 @@ import { CartContext } from "./CartContext";
 
 
 const Bg = styled.div`
-background-color: #222;
+background-color: #8ad8e9ae;
 width:100vw;
 height:50vh;
 color:#fff;
@@ -50,7 +50,9 @@ const ColumnsWrapper = styled.div`
 `;
 const Column = styled.div`
     display:flex;
+    flex-direction:column;
     position:absolute;
+    background-color: black;
     border-radius:50%;
    
 
@@ -63,7 +65,7 @@ const Logo = styled.div`
     justify-content:center;
     align-items:center;
     border-radius:10%;
-    background-color: #78c7dbae;
+    background-color: #123566;
     font-size:xx-large;
     
 `
@@ -95,7 +97,6 @@ export default function Featured({product}){
     return(
         <Bg>
             <Center>
-
                 <ColumnsWrapper> 
                 <Column>
                 <iframe width="680" height="635" src="https://www.youtube.com/embed/Pv46HBM8x8c?autoplay=1&mute=1" 
