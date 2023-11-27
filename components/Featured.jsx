@@ -35,18 +35,23 @@ const Desc = styled.p`
 const ColumnsWrapper = styled.div`
     overflow: hidden;
     display:flex;
-    height:480px;
+    height:300px;
     width:100%;
+    margin:5px;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
     position:relative;
     transition: all ease-in-out 1.0s;
       &:hover{
-      border-radius: 0%;
+      border-radius: 20%;
+      height:300px;
       }
 `;
 const Column = styled.div`
     display:flex;
-    justify-content:center;
     position:absolute;
+    border-radius:50%;
    
 
 `;
@@ -63,9 +68,13 @@ const ButtonsWrapper = styled.div`
 
 `;
 const Image = styled.img`
-    height:180px;
-    width:180px;
+    height:120px;
+    width:120px;
     z-index:5;
+    transition: all ease-in-out 1.0s;
+      &:hover{
+      opacity:0%;
+      }
 
 `;
 
@@ -81,12 +90,11 @@ export default function Featured({product}){
             <Center>
                 <ColumnsWrapper> 
                 <Column>
-                <iframe width="680" height="380" src="https://www.youtube.com/embed/MH25QHJ6auY?autoplay=1&mute=1"
-                 title="Covington Square &amp; Historic Courthouse  DJI Phantom"
-                  frameborder="0" 
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen>
-                </iframe>
+                <iframe width="680" height="635" src="https://www.youtube.com/embed/Pv46HBM8x8c?autoplay=1&mute=1" 
+                title="The Sciense behind geeese flying &#39;V&#39; formation"
+                 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                 allowfullscreen>
+                 </iframe>
                 </Column>
                 <Column>
                 <Image src = "https://georgiagoose-next-ecommerce.s3.amazonaws.com/1700614526161.png" alt="goose">
