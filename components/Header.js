@@ -32,9 +32,8 @@ const StyledNav = styled.nav`
 `;
 
 const NavLink = styled(Link)`
-    display:block;
     color: white;
-    font-size:.8re;
+    font-size:14px;
     font-family: 'Cinzel', serif;
     text-decoration:none;
     padding: 10px 0;
