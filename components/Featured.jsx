@@ -45,7 +45,7 @@ const ColumnsWrapper = styled.div`
     transition: all ease-in-out 1.0s;
       &:hover{
       border-radius: 20%;
-      height:300px;
+      height:400px;
       }
 `;
 const Column = styled.div`
@@ -56,7 +56,14 @@ const Column = styled.div`
 
 `;
 const Logo = styled.div`
-    color: #e02b9b6c;
+    color: white;
+    display:flex;
+    padding:0px 20px;
+    text-align:center;
+    justify-content:center;
+    align-items:center;
+    border-radius:10%;
+    background-color: #78c7dbae;
     font-size:xx-large;
     
 `
@@ -88,6 +95,7 @@ export default function Featured({product}){
     return(
         <Bg>
             <Center>
+
                 <ColumnsWrapper> 
                 <Column>
                 <iframe width="680" height="635" src="https://www.youtube.com/embed/Pv46HBM8x8c?autoplay=1&mute=1" 
@@ -97,9 +105,9 @@ export default function Featured({product}){
                  </iframe>
                 </Column>
                 <Column>
+                <Logo>
                 <Image src = "https://georgiagoose-next-ecommerce.s3.amazonaws.com/1700614526161.png" alt="goose">
-                </Image>
-                <Logo>Georgia Goose</Logo>
+                </Image>Georgia Goose</Logo>
                 </Column>
                 <div>
             <Title>{product.title}</Title>
