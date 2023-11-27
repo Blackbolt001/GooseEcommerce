@@ -40,7 +40,7 @@ const NavLink = styled(Link)`
     text-decoration:none;
     margin-right:5px;
     padding:10px 0;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width:768px) {
     padding:0px;
     font-size:1.5rem ;
   }

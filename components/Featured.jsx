@@ -49,8 +49,8 @@ const ColumnsWrapper = styled.div`
     transition: all ease-in-out 2.0s;
       &:hover{
       border-radius:50%;
-      height:260px;
-      width:260px;
+      height:360px;
+      width:360px;
       }
       @media screen and (min-width: 768px) {
     height:660px;
@@ -82,6 +82,11 @@ const Logo = styled.div`
     opacity:.8;
     background-color: #f3f4f5;
     font-size:xx-large;
+    transition: all ease-in-out 2.0s;
+    &:hover{
+        background-color: black;
+        color:white
+      }
     @media screen and (min-width: 768px) {
     height:400px;
     max-width:400px;
