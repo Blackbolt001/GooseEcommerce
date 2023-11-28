@@ -57,6 +57,7 @@ const ColumnsWrapper = styled.div`
     display:flex;
     justify-content:center;
     height:56vh;
+    width:100%;
     background-color: #728ec9;
     border-radius:10%;
     transition: all ease-in-out 2.0s;
@@ -79,7 +80,7 @@ const Column = styled.div`
     background-color: transparent;
     border-radius:10%;
     &:hover{
-        z-index:3;
+        z-index:2;
     }
  
    
@@ -90,10 +91,6 @@ const Logo = styled.div`
     display:flex;
     height:360px;
     width:360px;
-    padding:0px 20px;
-    text-align:center;
-    align-items:center;
-    border-radius:50%;
     z-index:1;
     opacity:.8;
     background-color: #f3f4f5;
@@ -118,8 +115,8 @@ const ButtonsWrapper = styled.div`
 
 `;
 const Image = styled.img`
-    height:120px;
-    width:120px;
+    height:60px;
+    width:60px;
     margin-top:5px;
     display:flex;
     cursor: pointer;
@@ -134,10 +131,10 @@ const Image = styled.img`
 `;
 const Image2 = styled.img`
     height:40vh;
+    width:100%;
     display:flex;
     overflow:hidden;
-    border-radius:5px;
-    width:360px;
+    border-radius:5%;
     z-index:1;
     position:absolute;
     bottom:245px;
@@ -161,7 +158,7 @@ const Image3 = styled.img`
     opacity:0;
     height:35%;
     width:100%;
-    z-index:2;
+    z-index:1;
     border-radius:5%;
     transition: all ease-in-out 3.0s;
     &:hover{
@@ -171,19 +168,27 @@ const Image3 = styled.img`
     @media screen and (min-width: 768px) {
     height:45vh;
     width:50vw;
+    z-index:3;
     transition: all ease-out 3.0s;
 
   }
 `;
 const Image4 = styled.img`
   display:flex;
-  height:80%;
+  height:60%;
+  align-self:center;
+  justify-self:center;
+  overflow:hidden;
   opacity:0;
   transition: all ease-in-out 2.0s;
   &:hover{
     opacity:1;
     z-index:2;
-   
+  }
+  @media screen and (min-width: 768px) {
+    height:80%;
+    z-index:2;
+
   }
 
 `;
