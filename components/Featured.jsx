@@ -57,7 +57,7 @@ const ColumnsWrapper = styled.div`
     display:flex;
     justify-content:center;
     height:56vh;
-    background-color: #293a5f;
+    background-color: #728ec9;
     border-radius:10%;
     transition: all ease-in-out 2.0s;
   &:hover{
@@ -66,6 +66,7 @@ const ColumnsWrapper = styled.div`
  }
       @media screen and (min-width: 768px) {
     height:600px;
+    z-index:-2;
   }
 `;
 const Column = styled.div`
@@ -132,12 +133,14 @@ const Image = styled.img`
 
 `;
 const Image2 = styled.img`
-    height:45vh;
+    height:40vh;
+    display:flex;
     overflow:hidden;
+    border-radius:5px;
     width:360px;
     z-index:1;
     position:absolute;
-    bottom:255px;
+    bottom:245px;
     @media screen and (min-width: 768px) {
     height:70vh;
     width:50vw;
