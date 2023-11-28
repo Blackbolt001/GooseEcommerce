@@ -130,14 +130,14 @@ const Image = styled.img`
 
 `;
 const Image2 = styled.img`
-    height:40vh;
+    height:40%;
     width:100%;
     display:flex;
     overflow:hidden;
     border-radius:5%;
     z-index:1;
     position:absolute;
-    bottom:245px;
+    bottom:25%;
     @media screen and (min-width: 768px) {
     height:70vh;
     width:50vw;
@@ -155,12 +155,13 @@ const Image2 = styled.img`
 const Image3 = styled.img`
     position:absolute;
     display:flex;
+    overflow:hidden;
     opacity:0;
     height:35%;
     width:100%;
     z-index:1;
     border-radius:5%;
-    transition: all ease-in-out 3.0s;
+    transition: all ease-in-out 2.0s;
     &:hover{
         z-index:3;
         opacity:1;
@@ -169,7 +170,7 @@ const Image3 = styled.img`
     height:45vh;
     width:50vw;
     z-index:3;
-    transition: all ease-out 3.0s;
+    transition: all ease-out 2.0s;
 
   }
 `;
