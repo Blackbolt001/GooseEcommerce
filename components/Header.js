@@ -7,9 +7,8 @@ import { CartContext } from "./CartContext";
 
 
 const StyledHeader = styled.header`
-    background-color: #123566;
+    background-color:  blue;
     display:flex;
-    border-radius:5px;
 `;
 const Logo = styled(Link)`
     color: #fff;

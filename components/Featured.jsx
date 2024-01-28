@@ -1,237 +1,89 @@
-import styled  from "styled-components";
-import  Button from "@/components/Button";
+import Center from "@/components/Center";
+import styled from "styled-components";
+import Button from "@/components/Button";
 import ButtonLink from "@/components/ButtonLink";
-import Center from "./Center";
-import CartIcon from "./icons/CartIcon";
-import { useContext } from "react";
-import { CartContext } from "./CartContext";
-import img2 from '../lib/assets/forestSunBackground.png';
-
+import CartIcon from "@/components/icons/CartIcon";
+import {useContext} from "react";
+import {CartContext} from "@/components/CartContext";
 
 const Bg = styled.div`
-background-color: #0c0c0cf6;
-width:100vw;
-align-items:center;
-justify-content:center;
-overflow:hidden;
-display:flex;
-height:80vh;
-color:#070707;
-padding:50px 0;
+  background-color: #222;
+  color:#fff;
+  padding: 50px 0;
 `;
 const Title = styled.h1`
-    margin-left:100px;
-    text-align:center;
-    font-weight:500;
-    color: #123566;
-    font-size:1.5rem;
-    z-index:3;
-    opacity:0;
-    font-family: 'Cinzel', serif;
-    transition: all ease-in-out 1.0s;
-    &:hover{
-        color: yellow;
-        opacity:1;
-
-    }
-    @media screen and (min-width: 768px) {
+  margin:0;
+  font-weight:normal;
+  font-size:1.5rem;
+  @media screen and (min-width: 768px) {
     font-size:3rem;
   }
 `;
 const Desc = styled.p`
-    color:#fff;
-    display:flex;
-    flex-wrap:wrap;
-    width:200px;
-    justify-self:center;
-    align-self:center;
-    font-size:1rem;
-    font-family: 'Cinzel', serif;
-    @media screen and (min-width: 768px) {
-    font-size:1.2rem;
-  }
- 
+  color:#aaa;
+  font-size:.8rem;
 `;
 const ColumnsWrapper = styled.div`
-    overflow: hidden;
-    display:flex;
-    justify-content:center;
-    height:56vh;
-    width:100%;
-    background-color: #728ec9;
-    border-radius:10%;
-    transition: all ease-in-out 2.0s;
-  &:hover{
-    background-color: #17171899;
-    z-index:-1;
- }
-      @media screen and (min-width: 768px) {
-    height:600px;
-    z-index:-2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  img{
+    max-width: 100%;
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+  div:nth-child(1) {
+    order: 2;
+  }
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1.1fr 0.9fr;
+    div:nth-child(1) {
+      order: 0;
+    }
+    img{
+      max-width: 100%;
+    }
   }
 `;
 const Column = styled.div`
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    overflow:hidden;
-    background-color: transparent;
-    border-radius:10%;
-    &:hover{
-        z-index:2;
-    }
- 
-   
-
-`;
-const Logo = styled.div`
-    color: #131212;
-    display:flex;
-    height:360px;
-    width:360px;
-    z-index:1;
-    opacity:.8;
-    background-color: #f3f4f5;
-    font-size:xx-large;
-    transition: all ease-out 3.0s;
-    &:hover{
-        background-color: black;
-        z-index:-1;
-      }
-    @media screen and (min-width: 768px) {
-    height:400px;
-    max-width:400px;
-    background-color:black;
-  }
-    
+  display: flex;
+  align-items: center;
 `;
 const ButtonsWrapper = styled.div`
-    display:flex;
-    gap:10px;
-    margin-top:65px;
-    justify-content:space-evenly;
-
-`;
-const Image = styled.img`
-    height:60px;
-    width:60px;
-    margin-top:5px;
-    display:flex;
-    cursor: pointer;
-    z-index:1;
-    transition: all ease-in-out 2.0s;
-    &:hover{
-        transform:1.1;
-        z-index:2;
-        opacity:0;
-    }
-
-`;
-const Image2 = styled.img`
-    height:40%;
-    width:100%;
-    display:flex;
-    overflow:hidden;
-    border-radius:5%;
-    z-index:1;
-    position:absolute;
-    bottom:25%;
-    @media screen and (min-width: 768px) {
-    height:70vh;
-    width:50vw;
-    display:flex;
-    border-radius:15%;
-    transition: all ease-in-out 2.0s;
-
-  }
-  &:hover{
-    opacity:0;
-    z-index:-1;
-    background-color:black;
-  }
-`;
-const Image3 = styled.img`
-    position:absolute;
-    display:flex;
-    overflow:hidden;
-    opacity:0;
-    height:35%;
-    width:100%;
-    z-index:1;
-    border-radius:5%;
-    transition: all ease-in-out 2.0s;
-    &:hover{
-        z-index:3;
-        opacity:1;
-    }
-    @media screen and (min-width: 768px) {
-    height:45vh;
-    width:50vw;
-    z-index:3;
-    transition: all ease-out 2.0s;
-
-  }
-`;
-const Image4 = styled.img`
-  display:flex;
-  height:60%;
-  align-self:center;
-  justify-self:center;
-  overflow:hidden;
-  opacity:0;
-  transition: all ease-in-out 2.0s;
-  &:hover{
-    opacity:1;
-    z-index:2;
-  }
-  @media screen and (min-width: 768px) {
-    height:80%;
-    z-index:2;
-
-  }
-
+  display: flex;
+  gap:10px;
+  margin-top:25px;
 `;
 
-
-
-export default function Featured({product}){
-    const {addProduct} = useContext(CartContext);
-    function addFeaturedToCart() {
+export default function Featured({product}) {
+  const {addProduct} = useContext(CartContext);
+  function addFeaturedToCart() {
     addProduct(product._id);
-    }
-    return(
-        
-        <Bg>
-            <Image3 src="https://georgiagoose-next-ecommerce.s3.amazonaws.com/1701192848890.png" alt="ATL Skyline"/>
-            <Image2 src ="https://georgiagoose-next-ecommerce.s3.amazonaws.com/1701100110927.png" alt="background"/>
-            
-            <Center>
-
-                <ColumnsWrapper> 
-                <Image src = "https://georgiagoose-next-ecommerce.s3.amazonaws.com/1700614526161.png" alt="goose"/>
-                <Image src = "https://georgiagoose-next-ecommerce.s3.amazonaws.com/1700614526161.png" alt="goose"/>
-                <Image src = "https://georgiagoose-next-ecommerce.s3.amazonaws.com/1700614526161.png" alt="goose"/>
-                <Column>
-                <Title>{product.title}</Title>
-            <Image4 src = "https://georgiagoose-next-ecommerce.s3.amazonaws.com/1700075277877.png" alt="goose"/>
-            </Column>
-            </ColumnsWrapper>
-            <Column>
-            <Desc> {product.description}</Desc>
-            </Column>
+  }
+  return (
+    <Bg>
+      <Center>
+        <ColumnsWrapper>
+          <Column>
             <div>
-                
-            <ButtonsWrapper>
-            <ButtonLink href={'/products/'+product._id} outline={1} white={1}>Chimichangas</ButtonLink>
-            <Button white={1} onClick={addFeaturedToCart}>
-            <CartIcon/>
-            add to cart
-            </Button>
-            </ButtonsWrapper>
+              <Title>{product.title}</Title>
+              <Desc>{product.description}</Desc>
+              <ButtonsWrapper>
+                <ButtonLink href={'/product/'+product._id} outline={1} white={1}>Read more</ButtonLink>
+                <Button white onClick={addFeaturedToCart}>
+                  <CartIcon />
+                  Add to cart
+                </Button>
+              </ButtonsWrapper>
             </div>
-            </Center>
-        </Bg>
-    );
+          </Column>
+          <Column>
+            <img src="https://georgiagoose-next-ecommerce.s3.amazonaws.com/1700075277877.png" alt=""/>
+          </Column>
+        </ColumnsWrapper>
+      </Center>
+
+    </Bg>
+  );
 }
