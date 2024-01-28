@@ -7,7 +7,7 @@ import { CartContext } from "./CartContext";
 
 
 const StyledHeader = styled.header`
-    background-color:  blue;
+    background-color:  purple;
     display:flex;
 `;
 const Logo = styled(Link)`
@@ -33,7 +33,7 @@ const StyledNav = styled.nav`
 `;
 
 const NavLink = styled(Link)`
-    color: white;
+    color: #fff;
     font-size:12px;
     font-family: 'Cinzel', serif;
     text-decoration:none;
@@ -45,7 +45,7 @@ const NavLink = styled(Link)`
   }
   transition: all ease-in-out 0.3s;
       &:hover{
-        color:blue;
+        color:#aaa;
       }
 `;
 const Button = styled.button`
